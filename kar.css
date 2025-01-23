@@ -1,0 +1,71 @@
+/* Kar Yağışı Efekti */
+@keyframes snowFall {
+    0% {
+        transform: translateY(-100vh); /* Başlangıç noktası */
+    }
+    100% {
+        transform: translateY(100vh); /* Sonraki nokta */
+    }
+}
+
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowFall linear infinite;
+}
+
+/* Kar tanesinin boyutları ve animasyon hızı */
+.snowflake-1 {
+    width: 5px;
+    height: 5px;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.snowflake-2 {
+    width: 8px;
+    height: 8px;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.snowflake-3 {
+    width: 6px;
+    height: 6px;
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.snowflake-4 {
+    width: 4px;
+    height: 4px;
+    animation-duration: 16s;
+    animation-delay: 6s;
+}
+
+.snowflake-5 {
+    width: 7px;
+    height: 7px;
+    animation-duration: 18s;
+    animation-delay: 8s;
+}
+
+/* Rastgele başlangıç noktaları ve hareket hızları */
+.snowflake {
+    left: calc(100vw * var(--random-x)); /* Rastgele x koordinatları */
+    animation-duration: calc(10s + var(--random-duration)); /* Rastgele hızlar */
+    animation-delay: calc(var(--random-delay)); /* Rastgele gecikmeler */
+}
